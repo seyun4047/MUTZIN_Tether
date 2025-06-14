@@ -62,7 +62,7 @@
 
 ---
 
-## 개발자/파워유저를 위한 주요 함수
+## 주요 함수
 
 - `list_cameras()`: 연결된 카메라 목록 가져오기
 - `get_camera_setting(camera, option)`: 카메라 설정값 읽기
