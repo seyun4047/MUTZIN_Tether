@@ -87,7 +87,7 @@
 ## 실행 예시
 
 ```bash
-python tether_manager.py
+python mutzin_tether.py
 ```
 - 카메라 연결 → 촬영 → 바로 미리보기/비교 → S3 업로드 → 자세 자동분석까지 한 번에!
 
