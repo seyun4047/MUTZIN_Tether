@@ -1,7 +1,3 @@
-# Sony Camera Tether GUI (`tether_manager`)
-
-## 이 프로그램은?
-
 **MUTZIN_Tether**는 스튜디오 촬영 테더링
 클라우드 업로드,
 클라이언트의 이미지 실시간으로 확인 및
