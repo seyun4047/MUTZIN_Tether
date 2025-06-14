@@ -81,6 +81,7 @@
 - Tkinter (파이썬 표준)
 - pose_estimator, aws_manager 등 별도 모듈 필요 (소스 참고)
 - AWS 자격증명은 기본적으로 파일로 설정
+- S3 Bucket 필요
 
 ---
 
