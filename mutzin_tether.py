@@ -481,26 +481,7 @@ class CameraGUI:
         row += 1
         self._add_pose_estimation_controls(row, param_frame)
         row += 1
-        # ttk.Separator(param_frame, orient="horizontal").grid(row=row, column=0, columnspan=4, sticky="ew", pady=6)
         row += 1
-        # ===============
-        # S3 업로드 컨트롤 추가 (저장 포맷 설정 근처에 배치)
-        # s3_frame = ttk.LabelFrame(param_frame, text="S3 자동 업로드", padding=(5, 5, 5, 5))
-        # s3_frame.grid(row=row, column=0, columnspan=4, sticky="ew", pady=10)
-
-        # self.s3_upload_cb = ttk.Checkbutton(
-        #     s3_frame,
-        #     text="촬영 시 S3 자동 업로드",
-        #     variable=self.s3_upload_var,
-        #     command=self._toggle_s3_upload
-        # )
-        # self.s3_upload_cb.pack(side="left", padx=5)
-        #
-        # self.s3_status_label = ttk.Label(s3_frame, text="")
-        # self.s3_status_label.pack(side="left", padx=5)
-        # self._update_s3_status()
-        # row += 1
-        # ===========
         ttk.Separator(param_frame, orient="horizontal").grid(row=row, column=0, columnspan=4, sticky="ew", pady=6)
         row += 1
         ttk.Label(param_frame, text="ISO:").grid(row=row, column=0, sticky="e")
@@ -637,38 +618,6 @@ class CameraGUI:
             z = max(z / 1.25, 0.2)
         self.compare_zoom_map[path] = z
         self.compare_canvas.refresh_rotation_or_quality(force=True)
-
-    # def _toggle_s3_upload(self):
-    #     """S3 업로드 설정 토글 시 호출"""
-    #     is_enabled = self.s3_upload_var.get()
-    #     # 설정파일에서 최신값을 읽어서 upload_enabled만 갱신 후 저장
-    #     settings = load_aws_settings()
-    #     settings['upload_enabled'] = is_enabled
-    #     save_aws_settings(settings)
-    #     # S3매니저에도 반영
-    #     self.s3_manager.settings = settings
-    #     self.s3_manager.initialize_client()
-    #     self._update_s3_status()
-
-    # def _update_s3_status(self):
-    #     if not self.s3_manager or not self.s3_manager.s3_client:
-    #         self.s3_status_label.config(text="(S3 연결 안됨)", foreground="red")
-    #         return
-    #     is_enabled = self.s3_manager.settings.get('upload_enabled', True)
-    #     if is_enabled:
-    #         self.s3_status_label.config(text="(활성화됨)", foreground="green")
-    #     else:
-    #         self.s3_status_label.config(text="(비활성화됨)", foreground="gray")
-
-    # def show_aws_settings(self):
-    #     AWSSettingsWindow(self.root)
-    #     # 설정창에서 저장했으므로 파일을 다시 읽어온다
-    #     settings = load_aws_settings()
-    #     self.s3_manager.settings = settings
-    #     self.s3_manager.initialize_client()
-    #     # GUI 상태 동기화
-    #     self.s3_upload_var.set(settings.get('upload_enabled', True))
-    #     self._update_s3_status()
 
     def _make_rotate_buttons(self, canvas, which="main"):
         frame = ttk.Frame(canvas, style="RotBtn.TFrame")
